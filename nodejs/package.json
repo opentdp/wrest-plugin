@@ -1,0 +1,7 @@
+{
+    "name": "wechat-rest",
+    "type": "module",
+    "dependencies": {
+        "ws": "^8.16.0"
+    }
+}
