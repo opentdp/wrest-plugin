@@ -12,20 +12,17 @@ public class Program
             try
             {
                 string url = "ws://localhost:7600/wcf/socket_receiver";
-
-                // Á¬½ÓWebSocket
+                // è¿æ¥WebSocket
                 await webSocket.ConnectAsync(new Uri(url), CancellationToken.None);
-
-                // ½ÓÊÕÏûÏ¢Ñ­»·
+                // æ¥æ”¶æ¶ˆæ¯å¾ªç¯
                 while (webSocket.State == WebSocketState.Open)
                 {
                     byte[] buffer = new byte[1024];
                     var result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
-
                     if (result.MessageType == WebSocketMessageType.Text)
                     {
                         string message = System.Text.Encoding.UTF8.GetString(buffer, 0, result.Count);
-                        Console.WriteLine("½ÓÊÕµ½ÏûÏ¢£º" + message);
+                        Console.WriteLine("æ¥æ”¶åˆ°æ¶ˆæ¯ï¼š" + message);
                     }
                     else if (result.MessageType == WebSocketMessageType.Close)
                     {
@@ -35,7 +32,7 @@ public class Program
             }
             catch (Exception ex)
             {
-                Console.WriteLine("·¢Éú´íÎó£º" + ex.Message);
+                Console.WriteLine("å‘ç”Ÿé”™è¯¯ï¼š" + ex.Message);
             }
         }
     }
