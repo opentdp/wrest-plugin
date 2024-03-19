@@ -22,6 +22,7 @@ class Ssl
 
         $api = self::$apis[array_rand(self::$apis)];
 
+        $args = idn_to_ascii($args);
         $data = fetch($api . '?domain=' . $args);
         if (empty($data['SSL_Domain'])) {
             return $data['error'] ?? null;
