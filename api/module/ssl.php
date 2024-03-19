@@ -2,6 +2,11 @@
 
 class Ssl
 {
+    public static $apis = [
+        'https://www.cuteapi.com/api/ssl/api.php',
+        'https://www.cuteapi.cn/api/ssl/api.php'
+    ];
+
     public static function help()
     {
         return [
@@ -15,8 +20,9 @@ class Ssl
             return '参数错误';
         }
 
-        $data = fetch('https://www.cuteapi.com/api/ssl/api.php?domain=' . $args);
+        $api = self::$apis[array_rand(self::$apis)];
 
+        $data = fetch($api . '?domain=' . $args);
         if (empty($data['SSL_Domain'])) {
             return null;
         }
