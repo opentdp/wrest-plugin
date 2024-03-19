@@ -10,7 +10,7 @@ class Ssl
     public static function help()
     {
         return [
-            $list[] = 'qq.com：' . '检测证书信息',
+            'qq.com' => '检测证书信息',
         ];
     }
 
@@ -24,7 +24,7 @@ class Ssl
 
         $data = fetch($api . '?domain=' . $args);
         if (empty($data['SSL_Domain'])) {
-            return null;
+            return $data['error'] ?? null;
         }
 
         $list = [];
