@@ -11,8 +11,11 @@ class Price
 
     public static function simple($args)
     {
-        $data = fetch('/price/' . $args);
+        if (empty($args)) {
+            return '参数错误';
+        }
 
+        $data = fetch('/price/' . $args);
         if (empty($data['title'])) {
             return null;
         }

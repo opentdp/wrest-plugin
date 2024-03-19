@@ -12,6 +12,10 @@ class Lbs
 
     public static function simple($args)
     {
+        if (empty($args)) {
+            return '参数错误';
+        }
+
         $data = fetch('/lbs/' . $args);
         if (empty($data['location'])) {
             return null;

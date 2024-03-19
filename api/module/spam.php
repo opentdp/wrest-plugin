@@ -11,6 +11,10 @@ class Spam
 
     public static function simple($args)
     {
+        if (empty($args)) {
+            return '参数错误';
+        }
+
         $data = fetch('/spam/' . $args);
 
         $list = [];

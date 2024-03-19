@@ -11,6 +11,10 @@ class Port
 
     public static function simple($args)
     {
+        if (empty($args)) {
+            return '参数错误';
+        }
+
         $data = fetch('/port/' . $args);
         if (isset($data['error'])) {
             return null;
