@@ -34,7 +34,8 @@ class Ssl
         $list[] = '证书机构：' . $data['CA'];
         $list[] = '颁发者：' . $data['issuer'];
         if (!empty($data['SAN'])) {
-            $list[] = '备用主机：' . $data['SAN'];
+            $san = str_replace('DNS:', '', $data['SAN']);
+            $list[] = '备用主机：' .  $san;
         }
         if (!empty($data['Country'])) {
             $list[] = '国家：' . $data['Country'];
@@ -58,7 +59,8 @@ class Ssl
             $list[] = '到期时间：' . $data['validTo'];
         }
         if (!empty($data['DaysRemaining'])) {
-            $list[] = '剩余时间：' . $data['DaysRemaining'];
+            list($days) = explode(' ', $data['DaysRemaining']);
+            $list[] = '剩余时间：' . intval($days) . ' 天';
         }
         return implode("\n", $list);
     }
