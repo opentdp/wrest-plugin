@@ -13,7 +13,7 @@ class Port
     {
         $data = fetch('/port/' . $args);
         if (isset($data['error'])) {
-            return '';
+            return null;
         }
 
         $list = [];

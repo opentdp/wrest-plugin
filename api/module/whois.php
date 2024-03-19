@@ -31,7 +31,7 @@ class Whois
             $list[] = 'DNSSEC 状态：' . $data['DNSSEC'];
             $list[] = 'DNSSEC DS 数据：' . $data['DNSSEC DS Data'];
             $list[] = '数据库更新时间：' . $data['Last Update of Database'];
-            return $list;
+            return implode("\n", $list);
         }
 
         if (isset($data['IP Network'])) {
@@ -44,9 +44,7 @@ class Whois
             $list[] = '状态：' . implode('、', $data['Status']);
             $list[] = '创建时间：' . $data['Creation Date'];
             $list[] = '更新时间：' . $data['Updated Date'];
-            return $list;
+            return implode("\n", $list);
         }
-
-        return '';
     }
 }

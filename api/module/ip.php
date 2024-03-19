@@ -21,21 +21,20 @@ class Ip
         $data = fetch('/ip/' . $args);
 
         $list = [];
-
         if (!empty($data['nation'])) {
-            $list[] = '国家：' . $data['nation'];
+            $list[] = '国家/地区：' . $data['nation'];
         }
         if (!empty($data['country'])) {
-            $list[] = '国家：' . $data['country'];
+            $list[] = '国家/地区：' . $data['country'];
         }
         if (!empty($data['province'])) {
-            $list[] = '省份：' . $data['province'];
+            $list[] = '省/直辖市：' . $data['province'];
         }
         if (!empty($data['city'])) {
             $list[] = '城市：' . $data['city'];
         }
         if (!empty($data['district'])) {
-            $list[] = '地区：' . $data['district'];
+            $list[] = '区/县：' . $data['district'];
         }
         if (!empty($data['longitude'])) {
             $list[] = '经度：' . $data['longitude'];
@@ -43,7 +42,6 @@ class Ip
         if (!empty($data['latitude'])) {
             $list[] = '纬度：' . $data['latitude'];
         }
-
-        return $list;
+        return implode("\n", $list);
     }
 }

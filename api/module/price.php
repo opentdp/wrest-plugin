@@ -12,8 +12,9 @@ class Price
     public static function simple($args)
     {
         $data = fetch('/price/' . $args);
+
         if (empty($data['title'])) {
-            return '';
+            return null;
         }
 
         $list = [];
@@ -21,7 +22,6 @@ class Price
         foreach ($data['prices'] as $item) {
             $list[] = $item['name'] . '：' . $item['price'];
         }
-
-        return $list;
+        return implode("\n", $list);
     }
 }

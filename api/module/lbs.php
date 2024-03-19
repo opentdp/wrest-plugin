@@ -14,16 +14,16 @@ class Lbs
     {
         $data = fetch('/lbs/' . $args);
         if (empty($data['location'])) {
-            return '';
+            return null;
         }
 
         if (preg_match('/^\d+\.\d+,\d+\.\d+$/', $args)) {
             return $data['address'] ?? '';
-        } else {
-            return [
-                '纬度：' . $data['location']['lat'],
-                '经度：' . $data['location']['lng'],
-            ];
         }
+
+        return implode("\n", [
+            '纬度：' . $data['location']['lat'],
+            '经度：' . $data['location']['lng'],
+        ]);
     }
 }

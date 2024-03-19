@@ -12,6 +12,9 @@ class Img
     public static function simple($args)
     {
         $data = fetch('/img/' . $args);
-        return $data['output'] ?? '';
+
+        if (!empty($data['output'])) {
+            return ['type' => 'image', 'link' => $data['output']];
+        }
     }
 }

@@ -20,6 +20,6 @@ class Help
                 }
             }
         }
-        return $list;
+        return implode("\n", $list);
     }
 }

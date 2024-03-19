@@ -12,6 +12,9 @@ class Video
     public static function simple($args)
     {
         $data = fetch('/video/' . $args);
-        return $data['output'] ?? '';
+
+        if (!empty($data['output'])) {
+            return ['type' => 'file', 'link' => $data['output']];
+        }
     }
 }

@@ -29,8 +29,13 @@ function input()
 function output($data)
 {
     header('Access-Control-Allow-Origin: *');
-    header('Content-Type: text/plain; charset=utf-8');
-    exit(is_string($data) ? $data : implode("\n", $data));
+    header('Content-Type: application/json; charset=utf-8');
+    if (empty($data)) {
+        $data = ['type' => 'error', 'text' => '获取数据失败'];
+    } elseif (is_string($data)) {
+        $data = ['type' => 'text', 'text' => $data];
+    }
+    exit(json_encode($data));
 }
 
 function fetch($url)

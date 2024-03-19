@@ -21,10 +21,8 @@ class Paper
 
         $data = fetch('/paper/' . $args);
 
-        if (isset($data['image'])) {
-            return $data['image'];
+        if (!empty($data['image'])) {
+            return ['type' => 'image', 'link' => $data['image']];
         }
-
-        return '';
     }
 }

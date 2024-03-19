@@ -14,18 +14,18 @@ class News
             $k = str_replace('/news/', 'news ', $k);
             $list[] =  "【/api {$k}】{$v}";
         }
-        return $list;
+        return implode("\n", $list);
     }
 
     public static function simple($args)
     {
-        if (!$args || $args == 'help') {
+        if (empty($args) || $args == 'help') {
             return self::help(1);
         }
 
         $data = fetch('/news/' . $args);
         if (empty($data['list'])) {
-            return '数据获取失败';
+            return null;
         }
 
         $list = [];
@@ -34,6 +34,6 @@ class News
             $item = $data['list'][$key];
             $list[] = "{$item['title']} {$item['url']}";
         }
-        return $list;
+        return implode("\n", $list);
     }
 }

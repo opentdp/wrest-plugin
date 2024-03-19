@@ -25,7 +25,7 @@ class Weather
 
         $data = fetch('/weather/' . $args);
         if (empty($data['address'])) {
-            return '';
+            return null;
         }
 
         return implode('', [

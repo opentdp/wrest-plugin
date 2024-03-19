@@ -12,6 +12,14 @@ class Spam
     public static function simple($args)
     {
         $data = fetch('/spam/' . $args);
-        return $data ?? '';
+
+        $list = [];
+        if (!empty($data['message'])) {
+            $list[] = $data['message'];
+        }
+        if (!empty($data['data'])) {
+            $list[] = implode('、', $data['data']);
+        }
+        return implode("\n", $list);
     }
 }
