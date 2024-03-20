@@ -33,3 +33,17 @@
 - 目录 `nodejs` 为 Node.js 插件示例
 
 - 目录 `python` 为 Python 插件示例
+
+## 代码提交
+
+提交代码时请使用 `feat: something` 作为说明，支持的标识如下
+
+- `feat` 新功能（feature）
+- `fix` 错误修复
+- `docs` 文档更改（documentation）
+- `style` 格式（不影响代码含义的更改，空格、格式、缺少分号等）
+- `refactor` 重构（即不是新功能，也不是修补bug的代码变动）
+- `perf` 优化（提高性能的代码更改）
+- `test` 测试（添加缺失的测试或更正现有测试）
+- `chore` 构建过程或辅助工具的变动
+- `revert` 还原以前的提交
