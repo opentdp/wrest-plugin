@@ -20,4 +20,4 @@ fetch(api).then(r => r.json()).then(data => {
         console.log(data.upload_response.data.links.url);
         return;
     }
-});
+}); 

@@ -9,4 +9,4 @@
 // @Content: node.exe
 // @Deliver: wechat,xxx@room,wxid_xxxx
 
-require('./image_zao');
+require('./Image_zao');
