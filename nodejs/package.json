@@ -1,5 +1,5 @@
 {
-    "name": "wechat-rest",
+    "name": "wrest-chat",
     "type": "module",
     "dependencies": {
         "ws": "^8.16.0"
