@@ -1,7 +1,7 @@
 // @Name: Image_zw
 // @Second: 0
 // @Minute: 0
-// @Hour: 0
+// @Hour: 7
 // @DayOfMonth: *
 // @Month: *
 // @DayOfWeek: *
@@ -10,7 +10,6 @@
 // @Deliver: wechat,xxx@room,wxid_xxxx
 
 // 引入axios库
-const axios = require('axios');
 
 // 定义一个名为Image_zw的类
 class Image_zw {
@@ -30,8 +29,8 @@ class Image_zw {
     const api = this.apis[Math.floor(Math.random() * this.apis.length)];
     try {
       // 发送GET请求获取数据
-      const response = await axios.get(api);
-      const data = response.data;
+      const response = await fetch(api);
+      const data = await response.json();
 
       // 根据返回的数据结构进行处理
       if (data.links) {
