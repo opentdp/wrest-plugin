@@ -1,3 +1,14 @@
+// @Name: Image_zw
+// @Second: 0
+// @Minute: 0
+// @Hour: 0
+// @DayOfMonth: *
+// @Month: *
+// @DayOfWeek: *
+// @Timeout: 300
+// @Content: node.exe
+// @Deliver: wechat,xxx@room,wxid_xxxx
+
 // 引入axios库
 const axios = require('axios');
 
