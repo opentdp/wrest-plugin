@@ -10,13 +10,19 @@
 // @Deliver: wechat,xxx@room,wxid_xxxx
 
 const urls = [
+    'https://wrest.rehi.org/paper/北京;摸鱼早报',
     'https://api.accmu.cn/api/images_zw.php'
 ];
 
 const api = urls[Math.floor(Math.random() * urls.length)];
 
 fetch(api).then(r => r.json()).then(data => {
+    if (data.link) {
+        console.log(data.link);
+        return;
+    }
     if (data.upload_response) {
         console.log(data.upload_response.data.links.url);
+        return;
     }
 });
