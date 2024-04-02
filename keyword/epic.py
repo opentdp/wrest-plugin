@@ -1,3 +1,4 @@
+# @Group: command
 # @Roomid: *
 # @Phrase: epicfree
 # @Level: 9
