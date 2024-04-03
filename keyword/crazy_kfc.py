@@ -1,6 +1,6 @@
 # @Roomid: *
 # @Phrase: crazy_thursday
-# @Level: 9
+# @Level: 0
 # @Target: python.exe
 # @Remark: 获取疯狂星期四语录,Author: xinmouren
 
