@@ -31,10 +31,11 @@ class Weather
         return implode('', [
             implode('', $data['address']) . "：{$data['description']}；{$data['forecast']}；",
             "气温：{$data['realtime']['temperature']} ℃，体感：{$data['realtime']['apparent_temperature']} ℃；",
-            "相对湿度：" . intval($data['realtime']['humidity'] * 100) . "%；风速：{$data['realtime']['wind']['speed']}公里/小时；",
-            "空气质量：{$data['realtime']['air_quality']['description']['chn']}，PM2.5：{$data['realtime']['air_quality']['pm25']}，PM10：{$data['realtime']['air_quality']['pm10']}；",
-            "舒适度指数：{$data['realtime']['life_index']['comfort']['index']}，{$data['realtime']['life_index']['comfort']['desc']}；",
-            "紫外线指数：{$data['realtime']['life_index']['ultraviolet']['index']}，{$data['realtime']['life_index']['ultraviolet']['desc']}；",
+            "气压：" . round($data['realtime']['pressure'] / 100, 2) . " hPa；",
+            "相对湿度：" . intval($data['realtime']['humidity'] * 100) . "%；风速：{$data['realtime']['wind']['speed']} km/hr；",
+            "空气质量：{$data['realtime']['air_quality']['aqi']['chn']}【{$data['realtime']['air_quality']['description']['chn']}】，PM2.5：{$data['realtime']['air_quality']['pm25']} μg/m³，PM10：{$data['realtime']['air_quality']['pm10']} μg/m³；",
+            "舒适度指数：{$data['realtime']['life_index']['comfort']['index']}【{$data['realtime']['life_index']['comfort']['desc']}】；",
+            "紫外线指数：{$data['realtime']['life_index']['ultraviolet']['index']}【{$data['realtime']['life_index']['ultraviolet']['desc']}】；",
         ]);
     }
 }
