@@ -30,7 +30,10 @@ class Ssl
 
         $list = [];
         $list[] = '域名：' . $args;
-        $list[] = '网站IP：' . $data['IP'];
+        $list[] = '网站IPv4：' . $data['IP'];
+       if (!empty($data['IPv6'])) {
+            $list[] = '网站IPv6：' . $data['IPv6'];
+        }
         $list[] = '签发域名：' . $data['SSL_Domain'];
         $list[] = '证书机构：' . $data['CA'];
         $list[] = '颁发者：' . $data['issuer'];
