@@ -19,7 +19,7 @@ class Kuaidi
         }
 
         //接口秘钥请前往https://api.linhun.vip/user/register.html注册获取
-        $data = fetch('https://api.linhun.vip/api/express?apiKey=059717a7778c01e2dfb4e2ef8e3058c4&nu=' . $args);
+        $data = fetch('https://api.linhun.vip/api/express?apiKey=1222846592-6301392171f-ccbeddb919a&nu=' . $args);
         
         if($data['code'] == 200){
                 $list = [];
