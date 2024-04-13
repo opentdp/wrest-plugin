@@ -18,8 +18,9 @@ class Kuaidi
             $args = $_SERVER['REMOTE_ADDR'];
         }
 
-        //接口秘钥请前往https://api.linhun.vip/user/register.html注册获取
-        $data = fetch('https://api.linhun.vip/api/express?apiKey=在上方链接申请秘钥s&nu=' . $args);
+        
+        $apiKey= //接口秘钥请前往https://api.linhun.vip/user/register.html注册获取
+        $data = fetch('https://api.linhun.vip/api/express?$apiKey&nu=' . $args);
         
         if($data['code'] == 200){
                 $list = [];
