@@ -1,5 +1,6 @@
 <?php
 
+require 'args.php';
 require 'basic.php';
 
 // 获取参数
