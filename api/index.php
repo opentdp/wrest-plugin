@@ -6,7 +6,7 @@ require 'basic.php';
 // 获取参数
 
 list($model, $args) = input();
-require 'alias.php';
+$model = $alias[$model] ?? $model;
 
 // 加载模块
 
