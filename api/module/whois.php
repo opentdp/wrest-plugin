@@ -26,10 +26,14 @@ class Whois
             $list[] = '域名状态：' . implode('、', $data['Domain Status']);
             $list[] = '创建时间：' . $data['Creation Date'];
             $list[] = '过期时间：' . $data['Registry Expiry Date'];
-            $list[] = '更新时间：' . $data['Updated Date'];
+            if (!empty($data['Updated Data'])) {
+                $list[] = '更新时间：' . $data['Updated Date'];
+            }
             $list[] = '域名服务器：' . implode('、', $data['Name Server']);
             $list[] = 'DNSSEC 状态：' . $data['DNSSEC'];
-            $list[] = 'DNSSEC DS 数据：' . $data['DNSSEC DS Data'];
+            if (!empty($data['DNSSEC DS Data'])) {
+                $list[] = 'DNSSEC DS 数据：' . $data['DNSSEC DS Data'];
+            }
             $list[] = '数据库更新时间：' . $data['Last Update of Database'];
             return implode("\n", $list);
         }
@@ -43,7 +47,9 @@ class Whois
             $list[] = '国家：' . $data['Country'];
             $list[] = '状态：' . implode('、', $data['Status']);
             $list[] = '创建时间：' . $data['Creation Date'];
-            $list[] = '更新时间：' . $data['Updated Date'];
+            if (!empty($data['Updated Data'])) {
+                $list[] = '更新时间：' . $data['Updated Date'];
+            }
             return implode("\n", $list);
         }
     }
