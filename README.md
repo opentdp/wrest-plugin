@@ -14,7 +14,7 @@
 
 ## `/api` 指令集
 
-目录 `api` 为接口指令集的后端程序，使用 PHP 开发。除支持文本返回值外，还支持返回 JSON 数据，详情参阅[自定义 API 使用说明](https://github.com/opentdp/wrest-chat/tree/master/wclient#%E8%87%AA%E5%AE%9A%E4%B9%89-api-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)。
+目录 `api` 为接口指令集的后端程序，使用 PHP 开发。除支持文本返回值外，还支持返回 JSON 数据，详情参阅[自定义 API 使用说明](https://docs.opentdp.org/#/wrest/开发指南/BOT模块?id=回调数据结构)。
 
 ## 计划任务插件
 
@@ -26,13 +26,13 @@
 
 ## 通用插件开发
 
-通用插件使用 HTTP/Websocket 协议交互，不依赖各插件框架的能力，可以实现更底层的操作，协议请参考 [wrest-chat 开发指南](https://github.com/opentdp/wrest-chat/tree/master?tab=readme-ov-file#%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97)。
+通用插件实则为 Wrest 服务的客户端，使用 HTTP/Websocket 协议交互，不依赖各插件框架的能力，可以实现更底层的操作，协议请参考 [wrest-chat 开发指南](https://docs.opentdp.org/#/wrest/开发指南/)。
 
-- 目录 `dotnet` 为 .NET 插件示例
+- 目录 `client/dotnet` 为 .NET 插件示例
 
-- 目录 `nodejs` 为 Node.js 插件示例
+- 目录 `client/nodejs` 为 Node.js 插件示例
 
-- 目录 `python` 为 Python 插件示例
+- 目录 `client/python` 为 Python 插件示例
 
 ## 代码提交
 
